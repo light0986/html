@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var result_1;
+
+        function cA(){
+            var a = getFirstNumber(); a=parseFloat(a);
+            var b = getTwiceNumber(); b=parseFloat(b);
+            var c = getThirdNumber(); c=parseFloat(c);
+            var d = getForthNumber(); d=parseFloat(d);
+            var e = getFifthNumber(); e=parseFloat(e);
+            var f = getSixthNumber(); f=parseFloat(f);
+            var g = getSeventhNumber(); g=parseFloat(g);
+            var h = getEighthNumber(); h=parseFloat(h);
+        var Are; Are=((a*d)+(c*f)+(e*h)+(g*d)-(b*c)-(d*e)-(f*g)-(h*a))/2;
+        sendResult(Are);}
+
+        //給p標簽傳值
+        function sendResult(result_1) {
+            var a = getFirstNumber(); a=parseFloat(a);
+            var b = getTwiceNumber(); b=parseFloat(b);
+            var c = getThirdNumber(); c=parseFloat(c);
+            var d = getForthNumber(); d=parseFloat(d);
+            var e = getFifthNumber(); e=parseFloat(e);
+            var f = getSixthNumber(); f=parseFloat(f);
+            var g = getSeventhNumber(); g=parseFloat(g);
+            var h = getEighthNumber(); h=parseFloat(h);
+        var num = document.getElementById("result")
+        num.innerHTML = "面積為："+result_1;}
+
+        //獲取第一位數字 
+        function getFirstNumber() {
+        var firstNumber = document.getElementById("first").value;
+        return firstNumber;}
+
+        //獲取第二位數字
+        function getTwiceNumber() {
+        var twiceNumber = document.getElementById("twice").value;
+        return twiceNumber;}
+
+        //獲取第三個數字
+        function getThirdNumber(){
+        var ThirdNumber = document.getElementById("third").value;
+        return ThirdNumber;}
+
+        //獲取第四個數字
+        function getForthNumber(){
+        var ForthNumber = document.getElementById("forth").value;
+        return ForthNumber;}
+
+        //獲取第五個數字
+        function getFifthNumber(){
+        var FifthNumber = document.getElementById("fifth").value;
+        return FifthNumber;}
+
+        //獲取第六個數字
+        function getSixthNumber(){
+        var SixthNumber = document.getElementById("sixth").value;
+        return SixthNumber;}
+
+        //獲取第七個數字
+        function getSeventhNumber(){
+        var seventhNumber = document.getElementById("seventh").value;
+        return seventhNumber;}
+
+        //獲取第八個數字
+        function getEighthNumber(){
+        var eighthNumber = document.getElementById("eighth").value;
+        return eighthNumber;}
+
+    </script>
+</head>
+<body>
+    <h3>給4個座標，求面積:</h3>
+    <h5>(a,b)(c,d)(e,f)(g,h)</h5>
+    <table>
+    <tr>
+        <td>請輸入a：</td>
+        <td><input type="text" id="first" /></td>
+    </tr>
+    <tr>
+        <td>請輸入b：</td>
+        <td><input type="text" id="twice" /></td>
+    </tr>
+    <tr>
+        <td>請輸入b：</td>
+        <td><input type="text" id="third" /></td>
+    </tr>
+    <tr>
+        <td>請輸入d：</td>
+        <td><input type="text" id="forth" /></td>
+    </tr>
+    <tr>
+        <td>請輸入e：</td>
+        <td><input type="text" id="fifth" /></td>
+    </tr>
+    <tr>
+    <tr>
+        <td>請輸入f：</td>
+        <td><input type="text" id="sixth" /></td>
+    </tr>
+    <tr>
+        <td>請輸入g：</td>
+        <td><input type="text" id="seventh" /></td>
+    </tr>
+    <tr>
+    <tr>
+        <td>請輸入h：</td>
+        <td><input type="text" id="eighth" /></td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td colspan="1" rowspan="2">
+        <button style="width: inherit" onclick="cA()">計算</button>
+        <input name="Submit" type="button" id="Submit" onClick="javascript:history.back(1)" value="回一上頁" />
+        </td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td>
+        <p rowspan="2" id="result"></p>
+        </td>
+    </tr>
+    </table>
+</body>
+</html>

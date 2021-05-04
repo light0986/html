@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var result_1;
+
+        function Fact(){var aa=[];
+            var a = getFirstNumber(); a=parseFloat(a);  
+            for(var i = 1; i<=a ;i++){
+            if(a % i == 0){aa.push(i);}}sendResult(aa);}
+
+        //給p標簽傳值
+        function sendResult(result_1) {
+        var a = getFirstNumber();
+        var num = document.getElementById("result")
+        num.innerHTML = a+"的因數為"+result_1;}
+
+        //獲取第一位數字
+        function getFirstNumber() {
+        var firstNumber = document.getElementById("first").value;
+        return firstNumber;}
+
+    </script>
+</head>
+<body>
+    <h3>代入一數，得其因數</h3>
+    <table>
+    <tr>
+        <td>輸入一個數：</td>
+        <td><input type="text" id="first" /></td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td colspan="1">
+        <button style="width: inherit" onclick="Fact()">計算</button>
+        <input name="Submit" type="button" id="Submit" onClick="javascript:history.back(1)" value="回一上頁" />
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+        <p id="result"></p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var result_1;
+
+        function tic(a,b,c,d,e,f,XY){ var AB; var AC; var BC;
+            var a = getFirstNumber(); a=parseFloat(a);
+            var b = getTwiceNumber(); b=parseFloat(b);
+            var c = getThirdNumber(); c=parseFloat(c);
+            var d = getForthNumber(); d=parseFloat(d);
+            var e = getFifthNumber(); e=parseFloat(e);
+            var f = getSixthNumber(); f=parseFloat(f);
+        var ABX; var ABY; ABX=Math.abs(a-c);ABY=Math.abs(b-d); ABX=ABX*ABX; ABY=ABY*ABY;AB=Math.sqrt(ABX+ABY);
+        var ACX; var ACY; ACX=Math.abs(a-e);ACY=Math.abs(b-f); ACX=ACX*ACX; ACY=ACY*ACY;AC=Math.sqrt(ACX+ACY);
+        var BCX; var BCY; BCX=Math.abs(c-e);BCY=Math.abs(d-f); BCX=BCX*BCX; BCY=BCY*BCY;BC=Math.sqrt(BCX+BCY);
+        var ABC;ABC=AB+AC+BC;
+        var IX;IX=((BC*a)+(AC*c)+(AB*e))/ABC; var IX2;IX2=IX.toFixed(2);
+        var IY;IY=((BC*b)+(AC*d)+(AB*f))/ABC; var IY2;IY2=IY.toFixed(2);
+        var arr; arr="("+IX2+","+IY2+")";sendResult(arr);}
+
+        //給p標簽傳值
+        function sendResult(result_1) {
+            var a = getFirstNumber(); a=parseFloat(a);
+            var b = getTwiceNumber(); b=parseFloat(b);
+            var c = getThirdNumber(); c=parseFloat(c);
+            var d = getForthNumber(); d=parseFloat(d);
+            var e = getFifthNumber(); e=parseFloat(e);
+            var f = getSixthNumber(); f=parseFloat(f);
+        var num = document.getElementById("result")
+        num.innerHTML = "座標="+result_1;}
+
+        //獲取第一位數字 
+        function getFirstNumber() {
+        var firstNumber = document.getElementById("first").value;
+        return firstNumber;}
+
+        //獲取第二位數字
+        function getTwiceNumber() {
+        var twiceNumber = document.getElementById("twice").value;
+        return twiceNumber;}
+
+        //獲取第三個數字
+        function getThirdNumber(){
+        var ThirdNumber = document.getElementById("third").value;
+        return ThirdNumber;}
+
+        //獲取第四個數字
+        function getForthNumber(){
+        var ForthNumber = document.getElementById("forth").value;
+        return ForthNumber;}
+
+        //獲取第五個數字
+        function getFifthNumber(){
+        var FifthNumber = document.getElementById("fifth").value;
+        return FifthNumber;}
+
+        //獲取第六個數字
+        function getSixthNumber(){
+        var SixthNumber = document.getElementById("sixth").value;
+        return SixthNumber;}
+
+    </script>
+</head>
+<body>
+    <h3>三角形內心座標</h3>
+    <h5>(a,b)(c,d)(e,f)=>(g,h)</h5>
+    <h5>=((a+c+e)/3,(b+d+f)/3)</h5>
+    <table>
+    <tr>
+        <td>請輸入a：</td>
+        <td><input type="text" id="first" /></td>
+    </tr>
+    <tr>
+        <td>請輸入b：</td>
+        <td><input type="text" id="twice" /></td>
+    </tr>
+    <tr>
+        <td>請輸入b：</td>
+        <td><input type="text" id="third" /></td>
+    </tr>
+    <tr>
+        <td>請輸入d：</td>
+        <td><input type="text" id="forth" /></td>
+    </tr>
+    <tr>
+        <td>請輸入e：</td>
+        <td><input type="text" id="fifth" /></td>
+    </tr>
+    <tr>
+    <tr>
+        <td>請輸入f：</td>
+        <td><input type="text" id="sixth" /></td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td colspan="1" rowspan="2">
+        <button style="width: inherit" onclick="tic()">計算</button>
+        <input name="Submit" type="button" id="Submit" onClick="javascript:history.back(1)" value="回一上頁" />
+        </td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td>
+        <p rowspan="2" id="result"></p>
+        </td>
+    </tr>
+    </table>
+</body>
+</html>

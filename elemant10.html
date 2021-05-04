@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var result_1;
+
+        function floTofra(){var allFactArr=[];
+            function ATDP(a){var count=a;
+                if(a%1==0){return 0;}else{
+                for(i=1;;i++){count=count*10;if(count%1==0)
+            {return i;break;}}}}//分辨小數點
+
+            function mOfTen(a){var count=1;
+                for(i=1;i<=a;i++){count = count*10;}
+                return count;}//10*10*10....
+
+        function GCD(a,b){var re=0;
+            do{re=a%b;a=b;b=re;}
+            while(re !==0);return a;}//最大公因數
+
+        var a = getFirstNumber(); a=parseFloat(a);
+        var deno=mOfTen(ATDP(a));//分母
+        var numer=a*deno;//分子
+        var num=GCD(numer,deno);//最大公因數
+        var numer1=numer/num; var deno1=deno/num;//約分
+        var str; allFactArr.push(numer1); allFactArr.push('/'); allFactArr.push(deno1);
+        str = allFactArr.join(''); sendResult(str);}
+
+        //給p標簽傳值
+        function sendResult(result_1) {
+        var a = getFirstNumber();
+        var num = document.getElementById("result")
+        num.innerHTML = a+"="+result_1;}
+
+        //獲取第一位數字
+        function getFirstNumber() {
+        var firstNumber = document.getElementById("first").value;
+        return firstNumber;}
+
+    </script>
+</head>
+<body>
+    <h3>代入一數，得其因數</h3>
+    <table>
+    <tr>
+        <td>輸入一個數：</td>
+        <td><input type="text" id="first" /></td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td colspan="1">
+        <button style="width: inherit" onclick="floTofra()">計算</button>
+        <input name="Submit" type="button" id="Submit" onClick="javascript:history.back(1)" value="回一上頁" />
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+        <p id="result"></p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

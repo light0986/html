@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var result_1;
+
+        function ICT(a,b,c){
+            function PT(a,b,c){ //畢氏定理：a平方+b平方=c平方
+            var L; var H; var O; L=a; H=b; O=c; 
+            if(L==0){L=0;}else{L=a*a;}//a平方
+            if(H==0){H=0;}else{H=b*b;}//b平方
+            if(O==0){O=0;}else{O=c*c;}//c平方
+        
+            if(a==0){L=O-H; L=Math.sqrt(L); return L;}
+            else if(b==0){H=O-L; H=Math.sqrt(H); return H;}
+            else if(c==0){O=L+H; O=Math.sqrt(O); return O;}
+            else{return '錯誤';}}
+
+            var a = getFirstNumber(); a=parseFloat(a);
+            var b = getTwiceNumber(); b=parseFloat(b);
+            var c = getThirdNumber(); c=parseFloat(c);
+            var rd1; var rd2; var rdc; var ict; var cl; cl=c;
+            rd1=a;rd2=b;rdc =rd1+rd2;//半徑相加
+            ict = PT(0,rdc,cl);sendResult(ict);}
+
+        //給p標簽傳值
+        function sendResult(result_1) {
+        var a = getFirstNumber();
+        var b = getTwiceNumber();
+        var c = getThirdNumber();
+        var num = document.getElementById("result")
+        num.innerHTML = "內公切線長為:"+result_1;}
+
+        //獲取第一位數字 
+        function getFirstNumber() {
+        var firstNumber = document.getElementById("first").value;
+        return firstNumber;}
+
+        //獲取第二位數字
+        function getTwiceNumber() {
+        var twiceNumber = document.getElementById("twice").value;
+        return twiceNumber;}
+
+        //獲取第三個數字
+        function getThirdNumber(){
+        var ThirdNumber = document.getElementById("third").value;
+        return ThirdNumber;}
+
+    </script>
+</head>
+<body>
+    <h3>梯形面積計算(空值請輸入0)</h3>
+    <table>
+    <tr>
+        <td>請輸入圓A半徑：</td>
+        <td><input type="text" id="first" /></td>
+    </tr>
+    <tr>
+        <td>請輸入圓B半徑：</td>
+        <td><input type="text" id="twice" /></td>
+    </tr>
+    <tr>
+        <td>請輸入兩圓圓心距離：</td>
+        <td><input type="text" id="third" /></td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td colspan="1" rowspan="2">
+        <button style="width: inherit" onclick="ICT()">計算</button>
+        <input name="Submit" type="button" id="Submit" onClick="javascript:history.back(1)" value="回一上頁" />
+        </td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td>
+        <p rowspan="2" id="result"></p>
+        </td>
+    </tr>
+    </table>
+</body>
+</html>

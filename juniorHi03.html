@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var result_1;
+
+        function PT(){ //a平方+b平方=c平方
+            var a = getFirstNumber(); a=parseFloat(a);
+            var b = getTwiceNumber(); b=parseFloat(b);
+            var c = getThirdNumber(); c=parseFloat(c);
+            var L; var H; var O; L=a; H=b; O=c; 
+            if(L==0){L=0}else{L=a*a;}//a平方
+            if(H==0){H=0}else{H=b*b;}//b平方
+            if(O==0){O=0}else{O=c*c;}//c平方
+
+            if(a==0){L=O-H; L=Math.sqrt(L); sendResult(L);}
+            else if(b==0){H=O-L; H=Math.sqrt(H); sendResult(H);}
+            else if(c==0){O=L+H; O=Math.sqrt(O); sendResult(O);}
+            else{return sendResult('錯誤');}}
+
+        //給p標簽傳值
+        function sendResult(result_1) {
+        var a = getFirstNumber();
+        var b = getTwiceNumber();
+        var c = getThirdNumber();
+        var num = document.getElementById("result")
+        num.innerHTML = "空值為"+result_1;}
+
+        //獲取第一位數字 
+        function getFirstNumber() {
+        var firstNumber = document.getElementById("first").value;
+        return firstNumber;}
+
+        //獲取第二位數字
+        function getTwiceNumber() {
+        var twiceNumber = document.getElementById("twice").value;
+        return twiceNumber;}
+
+        //獲取第三個數字
+        function getThirdNumber(){
+        var ThirdNumber = document.getElementById("third").value;
+        return ThirdNumber;}
+
+    </script>
+</head>
+<body>
+    <h3>畢氏定理(空值請輸入0)</h3>
+    <table>
+    <tr>
+        <td>請輸入底：</td>
+        <td><input type="text" value="0" id="first" /></td>
+    </tr>
+    <tr>
+        <td>請輸入高：</td>
+        <td><input type="text" value="0" id="twice" /></td>
+    </tr>
+    <tr>
+        <td>請輸入斜：</td>
+        <td><input type="text" value="0" id="third" /></td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td colspan="1" rowspan="2">
+        <button style="width: inherit" onclick="PT()">計算</button>
+        <input name="Submit" type="button" id="Submit" onClick="javascript:history.back(1)" value="回一上頁" />
+        </td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td>
+        <p rowspan="2" id="result"></p>
+        </td>
+    </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var result_1;
+
+        function gepT(a1,b1,a2,b2){
+            var a1 = getFirstNumber(); a1=parseFloat(a1);
+            var b1 = getTwiceNumber(); b1=parseFloat(b1);
+            var a2 = getThirdNumber(); a2=parseFloat(a2);
+            var b2 = getForthNumber(); b2=parseFloat(b2);
+
+            var final; var sw1; var sw2; var sw3; var sw4; var asw;
+            if(a1==0){sw1=1000;}else{sw1=0}; if(b1==0){sw2=100;}else{sw2=0};
+            if(a2==0){sw3=10;}else{sw3=0}; if(b2==0){sw4=1;}else{sw4=0};
+            asw=sw1+sw2+sw3+sw4;
+            switch(asw){
+            case 1:final=a2*(b1/a1);break;//b2空
+            case 10:final=b2/(b1/a1);break;//a2空
+            case 100:final=a1*(b2/a2);break;//b1空
+            case 1000:final=b1/(b2/a2);break;//a1空
+            default:final='錯誤';break;}
+            sendResult(final);}
+
+        //給p標簽傳值
+        function sendResult(result_1) {
+        var num = document.getElementById("result")
+        num.innerHTML = "未知數="+result_1;}
+
+        //獲取第一位數字 
+        function getFirstNumber() {
+        var firstNumber = document.getElementById("first").value;
+        return firstNumber;}
+
+        //獲取第二位數字
+        function getTwiceNumber() {
+        var twiceNumber = document.getElementById("twice").value;
+        return twiceNumber;}
+
+        //獲取第三個數字
+        function getThirdNumber(){
+        var ThirdNumber = document.getElementById("third").value;
+        return ThirdNumber;}
+
+        //獲取第四個數字
+        function getForthNumber(){
+        var ForthNumber = document.getElementById("forth").value;
+        return ForthNumber;}
+
+    </script>
+</head>
+<body>
+    <h3>等比例互換a1:b1=a2:b2</h3>
+    <h5>未知輸入0</h5>
+    <table>
+    <tr>
+        <td>請輸入a1：</td>
+        <td><input type="text" value="0" id="first" /></td>
+    </tr>
+    <tr>
+        <td>請輸入b1：</td>
+        <td><input type="text" value="0" id="twice" /></td>
+    </tr>
+    <tr>
+        <td>請輸入a2：</td>
+        <td><input type="text" value="0" id="third" /></td>
+    </tr>
+    <tr>
+        <td>請輸入b2：</td>
+        <td><input type="text" value="0" id="forth" /></td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td colspan="1" rowspan="2">
+        <button style="width: inherit" onclick="gepT()">計算</button>
+        <input name="Submit" type="button" id="Submit" onClick="javascript:history.back(1)" value="回一上頁" />
+        </td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td>
+        <p rowspan="2" id="result"></p>
+        </td>
+    </tr>
+    </table>
+</body>
+</html>

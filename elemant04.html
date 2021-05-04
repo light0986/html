@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var result_1;
+        function Tag(){
+            function Qdg(a,b){//四邊形面積
+                var L;var H; var aa; aa=L*H;
+                L=a;H=b;aa=L*H; 
+            return aa;}
+        var a = getFirstNumber(); a=parseFloat(a);
+        var b = getTwiceNumber(); b=parseFloat(b);
+        var L; var H; var aa;
+        L=a; H=b; aa=Qdg(L,H)/2; sendResult(aa);}
+
+        //給p標簽傳值
+        function sendResult(result_1) {
+        var a = getFirstNumber();
+        var b = getTwiceNumber();
+        var num = document.getElementById("result")
+        num.innerHTML = "底="+a+"，高"+b+"。面積="+result_1;}
+
+        //獲取第一位數字
+        function getFirstNumber() {
+        var firstNumber = document.getElementById("first").value;
+        return firstNumber;}
+
+        //獲取第二位數字
+        function getTwiceNumber() {
+        var twiceNumber = document.getElementById("twice").value;
+        return twiceNumber;}
+
+    </script>
+</head>
+<body>
+    <h3>三角形面積計算</h3>
+    <table>
+    <tr>
+        <td>輸入底：</td>
+        <td><input type="text" id="first" /></td>
+    </tr>
+    <tr>
+        <td>輸入高：</td>
+        <td><input type="text" id="twice" /></td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td colspan="1" rowspan="2">
+        <button style="width: inherit" onclick="Tag()">計算</button>
+        <input name="Submit" type="button" id="Submit" onClick="javascript:history.back(1)" value="回一上頁" />
+        </td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td>
+        <p rowspan="2" id="result"></p>
+        </td>
+    </tr>
+    </table>
+</body>
+</html>

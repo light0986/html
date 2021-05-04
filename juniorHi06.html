@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var result_1;
+
+        function UE(){//x1等號左邊x變數，x2等號右邊x變數，a等號左邊常數，b等號右邊常數
+            var x1 = getFirstNumber(); x1=parseFloat(x1);
+            var x2 = getTwiceNumber(); x2=parseFloat(x2);
+            var a = getThirdNumber(); a=parseFloat(a);
+            var b = getForthNumber(); b=parseFloat(b);
+            var lx; var rx; var lc; var rc; var ax; var ac; lx=x1; rx=x2; lc=a; rc=b; 
+            ac=rc-lc;//常數等號互換
+            ax=lx-rx;//變數等號互換
+            ax=ac/ax; sendResult(ax);}
+
+        //給p標簽傳值
+        function sendResult(result_1) {
+        var a = getFirstNumber();
+        var b = getTwiceNumber();
+        var c = getThirdNumber();
+        var d = getForthNumber();
+        var num = document.getElementById("result")
+        num.innerHTML = a+"X+("+b+")="+c+"X+("+d+")。X="+result_1;}
+
+        //獲取第一位數字 
+        function getFirstNumber() {
+        var firstNumber = document.getElementById("first").value;
+        return firstNumber;}
+
+        //獲取第二位數字
+        function getTwiceNumber() {
+        var twiceNumber = document.getElementById("twice").value;
+        return twiceNumber;}
+
+        //獲取第三個數字
+        function getThirdNumber(){
+        var ThirdNumber = document.getElementById("third").value;
+        return ThirdNumber;}
+
+        //獲取第三個數字
+        function getForthNumber(){
+        var ForthNumber = document.getElementById("forth").value;
+        return ForthNumber;}
+
+    </script>
+</head>
+<body>
+    <h3>求一元一次方程Ｘ解</h3>
+    <h5>x1+c1=x2+c2</h5>
+    <table>
+    <tr>
+        <td>請輸入x1變數：</td>
+        <td><input type="text" id="first" /></td>
+    </tr>
+    <tr>
+        <td>請輸入常數c1：</td>
+        <td><input type="text" id="twice" /></td>
+    </tr>
+    <tr>
+        <td>請輸入x2變數：</td>
+        <td><input type="text" id="third" /></td>
+    </tr>
+    <tr>
+        <td>請輸入常數c2：</td>
+        <td><input type="text" id="forth" /></td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td colspan="1" rowspan="2">
+        <button style="width: inherit" onclick="UE()">計算</button>
+        <input name="Submit" type="button" id="Submit" onClick="javascript:history.back(1)" value="回一上頁" />
+        </td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td>
+        <p rowspan="2" id="result"></p>
+        </td>
+    </tr>
+    </table>
+</body>
+</html>

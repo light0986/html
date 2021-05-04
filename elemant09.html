@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var result_1;
+
+        function ATDP(){
+        var a = getFirstNumber(); a=parseFloat(a); 
+        var count=a; 
+        if(a%1==0){sendResult(0);}else{
+        for(i=1;;i++){count=count*10;if(count%1==0)
+        {sendResult(i);break;}}}}
+
+        //給p標簽傳值
+        function sendResult(result_1) {
+        var a = getFirstNumber();
+        var num = document.getElementById("result")
+        num.innerHTML = a+"為小數點後"+result_1+"位";}
+
+        //獲取第一位數字
+        function getFirstNumber() {
+        var firstNumber = document.getElementById("first").value;
+        return firstNumber;}
+
+    </script>
+</head>
+<body>
+    <h3>分辨小數點後幾位？</h3>
+    <table>
+    <tr>
+        <td>輸入一個數：</td>
+        <td><input type="text" id="first" /></td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td colspan="1">
+        <button style="width: inherit" onclick="ATDP()">計算</button>
+        <input name="Submit" type="button" id="Submit" onClick="javascript:history.back(1)" value="回一上頁" />
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+        <p id="result"></p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

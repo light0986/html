@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script type="text/javascript">
+
+    function getTitle() {
+        var title = document.getElementById("title").value;
+        return title;}
+    
+    function getCompany() {
+        var finish = document.getElementById("company").value;
+        return finish;}
+
+    function getStart() {
+        var start = document.getElementById("start").value;
+        return start;}
+
+    function getFinish() {
+        var finish = document.getElementById("finish").value;
+        return finish;}
+
+    function getLength() {
+        var finish = document.getElementById("Length").value;
+        return finish;}
+
+</script>
+<style> 
+    div{align-items: center;}
+</style>
+</head>
+<body>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <div class="form-group">
+        <div class="col-md-10">
+            <h1>Code Creater</h1>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-6 control-label" for="title">Title:</label>
+        <div class="col-md-10" style="font-size: large;">
+            <input type="text" id="title"/>
+        </div>
+    </div>
+        
+    <div class="form-group">
+        <label class="col-md-6 control-label" for="company">Company ID:</label>
+        <div class="col-md-10" style="font-size: large;">
+            <input type="text" id="company"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-6 control-label" for="start">Start:</label>
+        <div class="col-md-10" style="font-size: large;">
+            <input type="text" id="start"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-6 control-label" for="finish">Finish:</label>
+        <div class="col-md-10" style="font-size: large;">
+            <input type="text" id="finish"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-6 control-label" for="Length">Length:</label>
+        <div class="col-md-10" style="font-size: large;">
+            <input type="text" id="Length"/> <button type="button" onclick="myFunction()">Accept</button>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+        <h5><select id="mySelect" size="10" width="300" style="width: 300px"></select></h5>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        
+        function myFunction() {
+            var t = getTitle(); var c = getCompany(); var s = getStart(); var e = getFinish(); var l = getLength();
+            var x; var option; var text = ""; var ll = "";
+            for(var j = 0; j < l; j++){
+                ll += "0";
+            }
+
+            for(s; s <= e; s++){
+                text = t + "/" + c + "/" + ll.slice(1,l - String(s).length) + s;
+                x = document.getElementById("mySelect");
+                option = document.createElement("option");
+                option.text = text;
+                x.add(option);
+            }
+        }
+
+    </script>
+
+    <div class="form-group">
+        <div class="col-md-10">
+        <h4><button type="button" onclick="str_get()">Download</button> <Input Type="Button" Value="Refresh" onClick="window.location.reload();"></h4>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        function str_get(){
+            var option = document.getElementById('mySelect').options;
+            var arr = new Array(option.length);
+            for (var i = 0; i < option.length; i++) { 
+                arr[i] = option[i].value;
+            }
+            var filename = new Date() + ".txt";
+            var text = arr.join("\n").toString();
+
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+
+    </script>
+
+</body>
+</html>

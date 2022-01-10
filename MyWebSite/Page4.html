@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>第四頁</title>
+    <meta http-equiv="expires" content="0">
+    <style type="text/css">
+        @import url(css/Style.css);
+    </style>
+
+    <script type="text/javascript" src="js/JavaScript.js"></script>
+    <script type="text/javascript" src="js/Page4_use.js"></script>
+
+</head>
+<body onload="go_Five_or_stay()">
+    <div id="wrapper">
+        <div id="header">
+            <div id="top">
+                <div id="top-left">
+                    <img src="img/IMG_1833.JPG" style="width:100px; height:100px; border-radius:50px;" />
+                </div>
+
+                <div id="top-right">
+                    <h3>我要成為靠北工程師！</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="left-menu">
+            <p style="margin-top:100px;"><a href="javascript:void(0)" onclick="go_page01()">首頁</a></p>
+            <p><a href="javascript:void(0)" onclick="go_page02()">簡介</a></p>
+            <p><a href="javascript:void(0)" onclick="go_page03()">紀錄</a></p>
+            <p><a href="javascript:void(0)" onclick="go_pageFour_or_Five()">其他</a></p>
+        </div>
+
+        <div id="content">
+            <h2 style="margin-top:25%">簡易登入器</h2>
+            <form>
+                <p>
+                    <label>帳號:</label>
+                    <input type="text" width="200" height="50" id="account_text" />
+                    <input type="button" width="50" height="50" value="確認" onclick="check()" />
+                </p>
+                <p>
+                    <label>密碼:</label>
+                    <input type="password" width="200" height="50" id="password_text" />
+                    <input type="button" width="50" height="50" value="提示" onclick="open_dialog()" />
+                </p>
+            </form>
+
+            <dialog id="myFirstDialog" style="width:150px; background-color: #ffffff; border: 1px dotted black;">
+                <p style="color:#000; margin:auto; position:relative; left:-15px;">帳密在JS檔中</p>
+                <button onclick="close_dialog()">Close</button>
+            </dialog>
+
+            <dialog id="LogSuccess" style="width:150px; background-color:#fff; border: 1px dotted black;">
+                <p style="color:#000; margin:auto; position:relative; left:-15px;">登入成功</p>
+                <button onclick="create_LS()">確認</button>
+            </dialog>
+
+            <dialog id="LogFail" style="width:350px; background-color:#fff; border: 1px dotted black;">
+                <img src="img/Gp6wNZr.gif" style="width:350px"/>
+                <button onclick="close_fail()">Close</button>
+            </dialog>
+
+        </div>
+
+        <div id="footer">
+            <h3 style="margin-top: 10px">© by Chang-You Chen. All rights reserved.</h3>
+            <h4>theme inspired by @light0986</h4>
+            <h5>Last build: 2021/12</h5>
+        </div>
+
+    </div>
+
+</body>
+</html>

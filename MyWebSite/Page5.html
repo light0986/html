@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>第五頁</title>
+    <meta http-equiv="expires" content="0">
+    <style type="text/css">
+        @import url(css/Style.css);
+    </style>
+
+    <script type="text/javascript" src="js/JavaScript.js"></script>
+    <script type="text/javascript" src="js/Page5_use.js"></script>
+
+</head>
+<body onload="go_pageFour_or_Stey()">
+    <div id="wrapper">
+
+        <div id="header">
+            <div id="top">
+                <div id="top-left">
+                    <img src="img/IMG_1833.JPG" style="width:100px; height:100px; border-radius:50px;" />
+                </div>
+
+                <div id="top-right">
+                    <h3>我要成為靠北工程師！</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="left-menu">
+            <p style="margin-top:100px;"><a href="javascript:void(0)" onclick="go_page01()">首頁</a></p>
+            <p><a href="javascript:void(0)" onclick="go_page02()">簡介</a></p>
+            <p><a href="javascript:void(0)" onclick="go_page03()">紀錄</a></p>
+            <p><a href="javascript:void(0)" onclick="go_pageFour_or_Five()">其他</a></p>
+        </div>
+
+        <div id="content">
+            <br />
+            <br />
+            <h1 id="success_id"></h1>
+            <br />
+            <div style="margin-left:-35px;">
+                <p><a href="https://github.com/light0986?tab=repositories" target="_blank">我的Github </a></p>
+                <p><a href="https://www.youtube.com/user/chenlight/featured" target="_blank">我的YouTube </a></p>
+                <p><a href="https://twitter.com/light0986" target="_blank">我的Twitter </a></p>
+                <p><a href="#" onclick="open_dialog()">我的FaceBook</a></p>
+            </div>
+            <br />
+            <br />
+            <br />
+            <button onclick="logout()">登出</button>
+
+            <dialog id="myFirstDialog" style="width:150px; background-color: #ffffff; border: 1px dotted black;">
+                <p style="color:#000; margin:auto; position:relative; left:-15px;">臉書很爛</p>
+                <p style="color:#000; margin:auto; position:relative; left:-15px;">沒有那種東西</p>
+                <button onclick="close_dialog()">Close</button>
+            </dialog>
+
+            <dialog id="LogOut" style="width:150px; background-color:#fff; border: 1px dotted black;">
+                <p style="color:#000; margin:auto; position:relative; left:-15px;">登出</p>
+                <button onclick="go_pagefour()">Close</button>
+            </dialog>
+        </div>
+
+        <div id="footer">
+            <h3 style="margin-top: 10px">© by Chang-You Chen. All rights reserved.</h3>
+            <h4>theme inspired by @light0986</h4>
+            <h5>Last build: 2021/12</h5>
+        </div>
+
+    </div>
+</body>
+</html>
